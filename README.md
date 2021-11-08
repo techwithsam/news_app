@@ -1,6 +1,27 @@
-# news_app
+# News App
 
-A new Flutter project.
+A simple news application built with Flutter and connected to API for fetching realtime news update from the internet.
+
+## Packages
+
+**http:** A composable, multi-platform, Future-based API for HTTP requests.
+
+* <https://pub.dev/packages/http>
+
+**flutter_inappwebview:** A Flutter plugin that allows you to add an inline webview, to use an headless webview, and to open an in-app browser window.
+
+* <https://pub.dev/packages/flutter_inappwebview>
+
+**url_launcher:** Flutter plugin for launching a URL. Supports web, phone, SMS, and email schemes.
+
+* <https://pub.dev/packages/url_launcher>
+
+## Screenshots
+
+
+## Api source
+
+* <https://newsapi.org//>
 
 ## Getting Started
 
