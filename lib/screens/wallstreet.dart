@@ -7,7 +7,7 @@ class WallStreetNews extends StatefulWidget {
   const WallStreetNews({Key? key}) : super(key: key);
 
   @override
-  _WallStreetNewsState createState() => _WallStreetNewsState();
+  State<WallStreetNews> createState() => _WallStreetNewsState();
 }
 
 class _WallStreetNewsState extends State<WallStreetNews> {

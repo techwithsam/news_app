@@ -7,7 +7,7 @@ class TopHeadlineNews extends StatefulWidget {
   const TopHeadlineNews({Key? key}) : super(key: key);
 
   @override
-  _TopHeadlineNewsState createState() => _TopHeadlineNewsState();
+  State<TopHeadlineNews> createState() => _TopHeadlineNewsState();
 }
 
 class _TopHeadlineNewsState extends State<TopHeadlineNews> {

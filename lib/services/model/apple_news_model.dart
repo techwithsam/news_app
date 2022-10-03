@@ -16,8 +16,8 @@ class AppleNewsModel {
     msg = json['msg'];
     totalResults = json['totalResults'];
     if (json['articles'] != null) {
-      List<Articles>? _articles = [];
-      articles = _articles;
+      List<Articles>? articles = [];
+      articles = articles;
       json['articles'].forEach((v) {
         articles!.add(Articles.fromJson(v));
       });

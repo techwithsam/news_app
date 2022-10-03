@@ -45,7 +45,7 @@ class ApiCall {
     } on TimeoutException catch (_) {
       return TopHeadlines(msg: _timeMsg, status: "Failed");
     } catch (e) {
-      return TopHeadlines(status: "Failed", msg: msg + '$e');
+      return TopHeadlines(status: "Failed", msg: '$msg$e');
     }
   }
 
@@ -69,7 +69,7 @@ class ApiCall {
     } on TimeoutException catch (_) {
       return AppleNewsModel(msg: _timeMsg, status: "Failed");
     } catch (e) {
-      return AppleNewsModel(status: "Failed", msg: msg + '$e');
+      return AppleNewsModel(status: "Failed", msg: '$msg$e');
     }
   }
 
@@ -93,7 +93,7 @@ class ApiCall {
     } on TimeoutException catch (_) {
       return TeslaNewsModel(msg: _timeMsg, status: "Failed");
     } catch (e) {
-      return TeslaNewsModel(status: "Failed", msg: msg + '$e');
+      return TeslaNewsModel(status: "Failed", msg: '$msg$e');
     }
   }
 
@@ -117,7 +117,7 @@ class ApiCall {
     } on TimeoutException catch (_) {
       return TechCrunchModel(msg: _timeMsg, status: "Failed");
     } catch (e) {
-      return TechCrunchModel(status: "Failed", msg: msg + '$e');
+      return TechCrunchModel(status: "Failed", msg: '$msg$e');
     }
   }
 
@@ -141,7 +141,7 @@ class ApiCall {
     } on TimeoutException catch (_) {
       return WallStreetModel(msg: _timeMsg, status: "Failed");
     } catch (e) {
-      return WallStreetModel(status: "Failed", msg: msg + '$e');
+      return WallStreetModel(status: "Failed", msg: '$msg$e');
     }
   }
 }

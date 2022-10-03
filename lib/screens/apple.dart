@@ -7,7 +7,7 @@ class AppleNews extends StatefulWidget {
   const AppleNews({Key? key}) : super(key: key);
 
   @override
-  _AppleNewsState createState() => _AppleNewsState();
+  State<AppleNews> createState() => _AppleNewsState();
 }
 
 class _AppleNewsState extends State<AppleNews> {

@@ -7,7 +7,7 @@ class TeslaNews extends StatefulWidget {
   const TeslaNews({Key? key}) : super(key: key);
 
   @override
-  _TeslaNewsState createState() => _TeslaNewsState();
+  State<TeslaNews> createState() => _TeslaNewsState();
 }
 
 class _TeslaNewsState extends State<TeslaNews> {

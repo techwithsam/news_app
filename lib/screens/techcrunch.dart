@@ -7,7 +7,7 @@ class TechCrunchNews extends StatefulWidget {
   const TechCrunchNews({Key? key}) : super(key: key);
 
   @override
-  _TechCrunchNewsState createState() => _TechCrunchNewsState();
+  State<TechCrunchNews> createState() => _TechCrunchNewsState();
 }
 
 class _TechCrunchNewsState extends State<TechCrunchNews> {
