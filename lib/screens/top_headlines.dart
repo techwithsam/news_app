@@ -11,7 +11,7 @@ class TopHeadlineNews extends StatefulWidget {
 }
 
 class _TopHeadlineNewsState extends State<TopHeadlineNews> {
-  Future<TopHeadlines>? _headlines;
+  Future<NewsModel>? _headlines;
 
   @override
   void initState() {
@@ -21,7 +21,7 @@ class _TopHeadlineNewsState extends State<TopHeadlineNews> {
 
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder<TopHeadlines>(
+    return FutureBuilder<NewsModel>(
       future: _headlines,
       builder: (context, snapshot) {
         switch (snapshot.connectionState) {
@@ -46,7 +46,7 @@ class _TopHeadlineNewsState extends State<TopHeadlineNews> {
               if (snapshot.data!.articles == null ||
                   snapshot.data!.articles!.isEmpty) {
                 return const Center(
-                  child: Text('Oops! Not article found 🥴'),
+                  child: Text('Oops! No article found 🥴'),
                 );
               } else {
                 return NewsCardWidget(data: snapshot.data!);

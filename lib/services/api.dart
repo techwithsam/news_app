@@ -1,7 +1,9 @@
 import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
+
 import 'package:http/http.dart' as http;
+
 import 'model/apple_news_model.dart';
 import 'model/techcrunch_model.dart';
 import 'model/tesla_news_model.dart';
@@ -12,7 +14,7 @@ class ApiCall {
   final String _nointernet = "No internet connection";
   final String _timeMsg = "Request timeout, connect to a better network";
   final String msg = "An error occured: ";
-  static const String apiKey = "8b06d860e8944eb988d2145ab362c0f2&language=en";
+  static const String apiKey = "8b06d860e8944eb988d2145ab362c0f2";
   String topHeadUrl =
       "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=$apiKey";
   String appleUrl =
@@ -24,28 +26,27 @@ class ApiCall {
   String wallStreetUrl =
       "https://newsapi.org/v2/everything?domains=wsj.com&apiKey=$apiKey";
 
-  Future<TopHeadlines> newsApi() async {
+  Future<NewsModel> newsApi() async {
     try {
-      final response = await http.get(Uri.parse(topHeadUrl)).timeout(
-            const Duration(seconds: 60),
-          );
-      if (response.statusCode == 200) {
-        var convert = json.decode(response.body);
-        if (convert.toString().isNotEmpty && response.statusCode == 200) {
-          TopHeadlines topHeadlines = TopHeadlines.fromJson(convert);
+      final response = await http.get(Uri.parse(topHeadUrl));
 
-          return topHeadlines;
-        }
-        return TopHeadlines.fromJson(jsonDecode(response.body));
-      } else {
-        return TopHeadlines(msg: response.reasonPhrase, status: "Failed");
+      if (response.statusCode == 200) {
+        NewsModel res = newsModelFromJson(response.body);
+
+        return NewsModel(
+          status: res.status,
+          msg: res.msg,
+          totalResults: res.totalResults,
+          articles: res.articles,
+        );
       }
+      return NewsModel(msg: response.reasonPhrase!, status: "Failed");
     } on SocketException catch (_) {
-      return TopHeadlines(msg: _nointernet, status: "Failed");
+      return NewsModel(msg: _nointernet, status: "Failed");
     } on TimeoutException catch (_) {
-      return TopHeadlines(msg: _timeMsg, status: "Failed");
+      return NewsModel(msg: _timeMsg, status: "Failed");
     } catch (e) {
-      return TopHeadlines(status: "Failed", msg: '$msg$e');
+      return NewsModel(status: "Failed", msg: '$msg$e');
     }
   }
 

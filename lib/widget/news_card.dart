@@ -1,4 +1,5 @@
 import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -70,7 +71,9 @@ class NewsCardWidget extends StatelessWidget {
                       Text(
                         "${data.articles![index].title}",
                         style: const TextStyle(
-                            fontSize: 16, fontWeight: FontWeight.w700),
+                          fontSize: 16,
+                          fontWeight: FontWeight.w700,
+                        ),
                       ),
                       const SizedBox(height: 8),
                       Text(
@@ -78,7 +81,9 @@ class NewsCardWidget extends StatelessWidget {
                         maxLines: 6,
                         overflow: TextOverflow.ellipsis,
                         style: const TextStyle(
-                            fontSize: 13, fontWeight: FontWeight.w400),
+                          fontSize: 13,
+                          fontWeight: FontWeight.w400,
+                        ),
                       ),
                       const SizedBox(height: 8),
                       FittedBox(
